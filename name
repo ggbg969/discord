@@ -1,0 +1,17 @@
+name: Envoyer annonce Discord
+
+on:
+  workflow_dispatch:  # Permet de lancer manuellement depuis GitHub
+
+jobs:
+  send_discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Envoyer le message Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d @payload.json \
+   ${{https://discordapp.com/api/webhooks/1417906475761926224/z8h9pw2UqtGB31MCJU4gBF2lmdBdkaV5wUkzMmy_xAgkRmCEZPVCgyd89BGDWT65Fo-K }}
